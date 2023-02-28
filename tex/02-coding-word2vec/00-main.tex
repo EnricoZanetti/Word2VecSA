@@ -1,12 +1,12 @@
 \section{Coding: Implementing word2vec}
-In this part you will implement the word2vec model and train your own word vectors with stochastic gradient descent (SGD). Make sure to take a look at the equations presented in sections 2 and 3, especially \textbf{equations (3) for gradient (of loss function $\bm J_{\text{naive-softmax}}(\bm v_c, o, \bm U)$) with respect to $\bm v_c$ and (6) for gradient with respect to each of the `outside' word vectors, $\bm u_w$'s} which we'll be using in our gradient calculation code. 
+In this part you will implement the word2vec model and train your own word vectors with stochastic gradient descent (SGD). Make sure to take a look at the equations presented in sections 1a and 1b, especially \textbf{equations (3) for gradient (of loss function $\bm J_{\text{naive-softmax}}(\bm v_c, o, \bm U)$) with respect to $\bm v_c$ and (6) for gradient with respect to each of the `outside' word vectors, $\bm u_w$'s} which we'll be using in our gradient calculation code. 
 
 \textit{\textbf{Note}: A2 code can be found here : \url{https://github.com/scpd-proed/XCS224N-A2}}
 
 \begin{enumerate}[(a)]
     % Question 1-A
     \item \points{2a} First, implement the |sigmoid()| function in \texttt{src-word2vec/submission.py} to apply the sigmoid function to an input vector. In the same file, fill in the implementation for the |naive_softmax_loss_and_gradient()| function. Then, fill in the implementation of the loss and gradient functions for the skip-gram model (|skipgram()|).\newline
-    To complete these steps you will need to refer to Sections 2 and 3, Equations (3) and (6).\newline
+    To complete these steps you will need to refer to Sections 1a and 1b, Equations (3) and (6).\newline
     
     \textbf{Pseudo code for skip-gram}
     
