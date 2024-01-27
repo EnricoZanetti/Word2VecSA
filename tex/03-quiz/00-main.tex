@@ -69,7 +69,7 @@ $V$ is center vector matrix
 \item \points{3quiz}
 Please input answer to question 3 of the Gradescope online assessment |A2 Online Assessment|.
 
-What is the shape of the gradient $\frac{\partial J_\text{naive-softmax}}{\partial V_c}$ matrix/vector where:
+What is the shape of the gradient $\frac{\partial J_\text{naive-softmax}}{\partial v_c}$ matrix/vector where:
 \begin{equation*} J_{\text{naive-softmax}}(\bm v_c, o, \bm U) = - \bm u_{o}^\top \bm v_c + \log \bigg( \sum_{w' \in \text{Vocab}} \exp(\bm u_{w'}^\top \bm v_c) \bigg) \end{equation*}
 
 \begin{equation*} {\partial J \over \partial \bm v_c} = \bm U(\hat{\bm y} - \bm y)\end{equation*}
