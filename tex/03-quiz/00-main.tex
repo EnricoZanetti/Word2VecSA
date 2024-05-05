@@ -155,6 +155,8 @@ $u_o$ is the `outside' vector representing outside word o.
 
 $v_c$ is the `center' vector representing center word c. 
 
+Which of the following statements are true?
+
 \begin{enumerate}[(a)]
 \item In naive softmax, the gradient is dependent on summation across all classes. In the case of word2vec, this means summing across all the words in the vocabulary (as can be seen in the above equation). This tends to slow down the training process.
 \item In negative sampling, computation is cheaper. Instead of summing across all words (represented by uw in the above equation) we only sum across a few context/negative words(termed as negative samples).
