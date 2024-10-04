@@ -26,8 +26,7 @@ def sigmoid(x):
   s -- sigmoid(x)
   """
 
-  ### START CODE HERE
-  ### END CODE HERE
+  s = 1 / (1 + np.exp(-x))
 
   return s
 
@@ -66,6 +65,29 @@ def naive_softmax_loss_and_gradient(center_word_vec,outside_word_idx,outside_vec
   ### to integer overflow.
   
   ### START CODE HERE
+
+  # Compute the scores (unnormalized log probabilities)
+  scores = np.dot(outside_vectors, center_word_vec)
+
+  # Compute the softmax probabilities
+  y_hat = softmax(scores)
+
+  # Compute the loss: -log(y_hat[outside_word_idx])
+  loss = -np.log(y_hat[outside_word_idx])
+
+  # Create the true distribution vector y
+  y = np.zeros_like(y_hat)
+  y[outside_word_idx] = 1
+
+  # Compute the error vector
+  error = y_hat - y
+
+  # Compute the gradient with respect to the center word vector (v_c)
+  grad_center_vec = np.dot(outside_vectors.T, error)
+
+  # Compute the gradient with respect to all the outside word vectors (U)
+  grad_outside_vecs = np.outer(error, center_word_vec)
+
   ### END CODE HERE
 
   return loss, grad_center_vec, grad_outside_vecs
@@ -144,6 +166,30 @@ def skipgram(current_center_word, window_size, outside_words, word2ind, center_w
   grad_outside_vectors = np.zeros(outside_vectors.shape)
 
   ### START CODE HERE
+
+  # Get the index of the current center word
+  center_word_idx = word2ind[current_center_word]
+
+  # Extract the center word vector (v_c)
+  center_word_vec = center_word_vectors[center_word_idx]
+
+  # Loop over all outside words (context words)
+  for outside_word in outside_words:
+     outside_word_idx = word2ind[outside_word]
+
+     # Compute loss and gradients using the provided loss and grandient function
+     loss_curr, grad_center, grad_outside = word2vec_loss_and_gradient(
+      center_word_vec, outside_word_idx, outside_vectors, dataset)
+
+     # Accumulate the loss
+     loss += loss_curr
+
+     # Accumulate the gradient with respect to the center word vector
+     grad_center_vecs[center_word_idx] += grad_center
+
+     # Accumulate the gradient with respect to the outside word vectors
+     grad_outside_vectors += grad_outside
+
   ### END CODE HERE
 
   return loss, grad_center_vecs, grad_outside_vectors
@@ -244,6 +290,13 @@ def sgd(f, x0, step, iterations, postprocessing=None, use_saved=False,PRINT_EVER
 
     loss = None
     ### START CODE HERE
+
+    # Evaluate the function to get loss and gradient
+    loss, grad = f(x)
+
+    # Update the parameters using the gradient
+    x -= step * grad
+
     ### END CODE HERE
 
     x = postprocessing(x)
