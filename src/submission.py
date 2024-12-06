@@ -10,7 +10,6 @@ import random
 
 import numpy as np
 
-from utils.gradcheck import gradcheck_naive
 from utils.utils import softmax
 
 ############
