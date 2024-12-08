@@ -4,7 +4,9 @@
 
 Upon completing the training process, the script generates a visualization of the trained word embeddings using dimensionality reduction (PCA). Below is an example of the output:
 
-![Word Embedding Visualization](src/output/word_vectors_(soln).png)
+<p align="center">
+  <img src="src/output/word_vectors_(soln).png" alt="Word Embedding Visualization" width="500"/>
+</p>
 
 ## What This Repository Does
 
