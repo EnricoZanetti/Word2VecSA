@@ -120,8 +120,10 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-.dmypy.json
-dmypy.json
+
+# Allow specific files in output
+!output/sample_vectors_(soln).json
+!output/word_vectors_(soln).png
 
 # Pyre type checker
 .pyre/
