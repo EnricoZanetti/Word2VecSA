@@ -1,4 +1,4 @@
-name: XCS224N
+name: Word2VecSA
 channels:
   - defaults
   - conda-forge
