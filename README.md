@@ -90,13 +90,13 @@ Upon completion:
 - Performance: Training time may vary depending on system performance and dataset size.
 - Outputs: Ensure the `output/` directory exists (or specify another directory) to save results (`word_vectors.png` and `sample_vectors_(soln).json`).
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 ## Acknowledgments
 
 This project was inspired by [Natural Language Processing with Deep Learning](https://online.stanford.edu/courses/xcs224n-natural-language-processing-deep-learning) course provided by Stanford University.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Contacts
 
