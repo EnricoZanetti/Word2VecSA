@@ -137,7 +137,3 @@ venv.bak/
 *.out
 *.synctex.gz
 main.pdf
-
-# Solution-related files
-*_(soln)*
-*_(soln)/*
