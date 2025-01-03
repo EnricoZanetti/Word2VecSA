@@ -102,4 +102,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contacts
 
-- LinkedIn: [Enrico Zanetti](https://www.linkedin.com/in/enrico-zanetti/)
+- **Developer**: [Enrico Zanetti](https://www.linkedin.com/in/enrico-zanetti/)
